@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist - WatchTime</title>
+    <style>
+        /* Basic Reset */
+        body, h1, h2, p, ul, li, img, a, button, select, input {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #0685f4;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background: #222;
+            color: #fff;
+            width: 200px;
+        }
+
+        .sort-select {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background: #222;
+            color: #fff;
+        }
+
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .wishlist-card {
+            background: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .wishlist-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .wishlist-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .wishlist-card .content {
+            padding: 10px;
+            background: #444;
+        }
+
+        .wishlist-card .title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .wishlist-card .rating {
+            color: #f5c518;
+            margin-bottom: 10px;
+        }
+
+        .wishlist-card .description {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .wishlist-card .remove-button {
+            padding: 10px;
+            background: #e50914;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .wishlist-card .remove-button:hover {
+            background: #d40813;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="#" class="logo">WatchTime</a>
+                <ul>
+                    <li><a href="movie_home.php">Home</a></li>
+                    <li><a href="web_series.html">Series</a></li>
+                    <li><a href="films.html">Films</a></li>
+                    <li><a href="new_popular.html">New & Popular</a></li>
+                    <li><a href="wishlist.html">My List</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>My Wishlist</h1>
+
+            <div class="filter-bar">
+                <input type="text" class="search-input" placeholder="Search...">
+                <select class="sort-select">
+                    <option value="title">Sort by Title</option>
+                    <option value="rating">Sort by Rating</option>
+                    <option value="date_added">Sort by Date Added</option>
+                </select>
+            </div>
+
+            <div class="wishlist-grid">
+                <div class="wishlist-card">
+                    <img src="movie1.jpg" alt="Movie 1">
+                    <div class="content">
+                        <p class="title">Movie Title 1</p>
+                        <p class="rating">⭐ 8.5/10</p>
+                        <p class="description">Brief description of the movie.</p>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                </div>
+                <div class="wishlist-card">
+                    <img src="movie2.jpg" alt="Movie 2">
+                    <div class="content">
+                        <p class="title">Movie Title 2</p>
+                        <p class="rating">⭐ 7.8/10</p>
+                        <p class="description">Brief description of the movie.</p>
+                        <button class="remove-button">Remove</button>
+                    </div>
+                </div>
+                <!-- Add more wishlist cards -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WatchTime. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

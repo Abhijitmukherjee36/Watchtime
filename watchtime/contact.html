@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - WatchTime</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS -->
+    <style>
+        /* Include the same styles from movie_home.php for consistency */
+        body, h1, h2, p, ul, li, img, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #0685f4;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0685f4;
+        }
+
+        main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .contact-section {
+            background: #333;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .contact-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form label {
+            font-size: 16px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            border-radius: 0%;
+            border: 1px solid #444;
+            background: #222;
+            color: #fff;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            background: #444;
+            border-color: #0685f4;
+        }
+
+        .contact-form button {
+            background: #0685f4;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #75f406;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="logobutton.html" class="logo">WatchTime</a>
+                <ul>
+                    <li><a href="movie_home.php">Home</a></li>
+                    <li><a href="web_series.html">Series</a></li>
+                    <li><a href="films.html">Films</a></li>
+                    <li><a href="new_popular.html">New & Popular</a></li>
+                    <li><a href="wishlist.html">My List</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="contact-section">
+            <div class="container">
+                <h1>Contact Me</h1>
+                <p>Hi!! Abhijit this side, feel free to reach out to me directly via email or use the contact form below. </p>
+                <p>Email: <a href="mailto:your-email@gmail.com" style="color: #0685f4;">your-email@gmail.com</a></p>
+
+                <form class="contact-form" action="contact_form_handler.php" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WatchTime. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

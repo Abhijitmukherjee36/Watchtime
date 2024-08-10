@@ -1,0 +1,307 @@
+body, h1, h2, p, ul, li, img, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+
+
+
+
+.support {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.support a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.support a:hover {
+    text-decoration: underline;
+}
+
+.signup {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.signup a {
+    color: white;
+    text-decoration: none;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+
+/*                  movie_home.css              */
+/* Basic Reset */
+body, h1, h2, p, ul, li, img, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 10px 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    background: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    gap: 20px;
+    position: relative;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: #333;
+    color: #fff;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.search-btn {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.search-btn:hover {
+    background: #f40612;
+}
+
+
+.hero-content img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.hero-info {
+    max-width: 600px;
+}
+
+.hero-info h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-info p {
+    margin-bottom: 10px;
+}
+
+.btn {
+    background: #0952e5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #f40612;
+}
+
+.movie-list {
+    padding: 20px 0;
+}
+
+.movie-list h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.movie-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.movie-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movie-carousel::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.movie-carousel::-webkit-scrollbar-track {
+    background: #333;
+}
+
+.movie-card {
+    flex: 0 0 200px;
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-card p {
+    padding: 10px;
+    background: #444;
+}
+
+footer {
+    background: #111;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/*              signup page          */

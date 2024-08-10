@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Films - Netflix Style</title>
+    <style>
+        /* Basic Reset */
+        body, h1, h2, p, ul, li, img, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* General Styles black */
+       /* body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }*/
+
+        header {
+            background: #111;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #0685f4;
+        }
+
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background: #222;
+            color: #fff;
+            width: 200px;
+        }
+
+        .filter-select {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background: #222;
+            color: #fff;
+        }
+
+        .film-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .film-card {
+            background: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .film-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .film-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .film-card .content {
+            padding: 10px;
+            background: #444;
+        }
+
+        .film-card .title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .film-card .rating {
+            color: #f5c518;
+            margin-bottom: 10px;
+        }
+
+        .film-card .description {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: white;
+            display: none;
+            pointer-events: all;
+            text-decoration: none;
+        }
+
+        .film-card:hover .play-button {
+            display: block;
+        }
+
+        .film-card:hover img {
+            opacity: 0.7;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="#" class="logo">WatchTime</a>
+                <ul>
+                    <li><a href="movie_home.php">Home</a></li>
+                    <li><a href="web_series.html">Series</a></li>
+                    <li><a href="films.html">Films</a></li>
+                    <li><a href="new_popular.html">New & Popular</a></li>
+                    <li><a href="wishlist.html">My List</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>All Films</h1>
+            <div class="filter-bar">
+                <input type="text" class="search-input" placeholder="Search...">
+                <select class="filter-select">
+                    <option value="all">All</option>
+                    <option value="action">Action</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="romance">Romance</option>
+                </select>
+            </div>
+            <div class="film-grid">
+                <div class="film-card">
+                    <img src="pictures/6undergrounds.jpg" alt="Film 1">
+                    <a href="film1.html" class="play-button">&#9658;</a>
+                    <div class="content">
+                        <p class="title">6Underground</p>
+                        <p class="rating">⭐ 8.5/10</p>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="film-card">
+                    <img src="pictures/heartofstone.jpg" alt="Film 2">
+                    <a href="film2.html" class="play-button">&#9658;</a>
+                    <div class="content">
+                        <p class="title">Heart Of Stone</p>
+                        <p class="rating">⭐ 7.9/10</p>
+                        <p class="description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="film-card">
+                    <img src="pictures/junge.jpg" alt="Film 3">
+                    <a href="film3.html" class="play-button">&#9658;</a>
+                    <div class="content">
+                        <p class="title">Jung E</p>
+                        <p class="rating">⭐ 9.1/10</p>
+                        <p class="description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    </div>
+                </div>
+                <div class="film-card">
+                    <img src="pictures/gremlins.jpeg" alt="Film 4">
+                    <a href="film4.html" class="play-button">&#9658;</a>
+                    <div class="content">
+                        <p class="title">Gremlines</p>
+                        <p class="rating">⭐ 8.3/10</p>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                </div>
+                <div class="film-card">
+                    <img src="pictures/thewhitetiger.avif" alt="Film 5">
+                    <a href="film5.html" class="play-button">&#9658;</a>
+                    <div class="content">
+                        <p class="title">The White Tiger</p>
+                        <p class="rating">⭐ 7.5/10</p>
+                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+                <!-- Add more film cards as needed -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WatchTime. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .background {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .overlay {
+            position: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .login-form h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+    
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 90%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .support {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .support a {
+            color: #0685f4;
+            text-decoration: none;
+        }
+
+        .support a:hover {
+            text-decoration: underline;
+        }
+
+        .signup {
+            color: white;
+            margin-top: 20px;
+        }
+
+        .signup a {
+            color: #0685f4;
+            text-decoration: none;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <video autoplay muted loop id="background-video">
+            <source src="background-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay">
+            <div class="login-container">
+                <img src="netflix-logo.jpg" alt="Netflix Logo" class="logo">
+                <form class="login-form" action="login.php" method="POST">
+                    <h2>Sign In</h2>
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Email or phone number" required>
+                    </div>
+                    <div class="input-group" >
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn" style="width: 97%" padding: 10px; background: #218ed1; border: none; border-radius: 4px; color: white; font-size: 16px; cursor: pointer; onmouseover="this.style.background='#186ba7'" onmouseout="this.style.background='#218ed1'">Sign In</button>
+                    <div class="support">
+                        <div>
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#">Need help?</a>
+                    </div>
+                    <div class="signup">
+                        <p>New to WatchTime? <a href="signup.html">Sign up now</a>.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

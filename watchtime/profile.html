@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - WatchTime</title>
+    <style>
+        /* Basic Reset */
+        body, h1, h2, h3, p, ul, li, img, a, button, input, select {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #0685f4;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0685f4;
+        }
+
+        main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #000000;
+            border-radius: 8px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            margin-top: 80px; /* Added margin-top to push it down */
+        }
+
+        .profile-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #444;
+            transition: transform 0.3s;
+        }
+
+        .profile-header img:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-header h1 {
+            font-size: 36px;
+            color: #0685f4;
+        }
+
+        .profile-header .username {
+            font-size: 18px;
+            color: #aaa;
+        }
+
+        .profile-header .edit-button {
+            background: #0685f4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .profile-header .edit-button:hover {
+            background: #0c8f26;
+            transform: scale(1.05);
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .profile-section {
+            background: #1c1c1c;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .profile-section:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #0685f4;
+        }
+
+        .profile-section p {
+            margin-bottom: 10px;
+        }
+
+        .activity-summary ul {
+            list-style: none;
+        }
+
+        .activity-summary ul li {
+            background: #333;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: background 0.3s;
+        }
+
+        .activity-summary ul li:hover {
+            background: #444;
+        }
+
+        .preferences label,
+        .account-settings label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .preferences select,
+        .account-settings input[type="text"],
+        .account-settings input[type="email"],
+        .account-settings input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #555;
+            background: #1c1c1c;
+            color: #ffffff;
+            margin-bottom: 10px;
+            transition: background 0.3s;
+        }
+
+        .preferences select:focus,
+        .account-settings input[type="text"]:focus,
+        .account-settings input[type="email"]:focus,
+        .account-settings input[type="password"]:focus {
+            background: #2c2c2c;
+        }
+
+        .save-button {
+            background: #0685f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            width: 100%;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .save-button:hover {
+            background: #0c8f26;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #0685f4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo">WatchTime</a>
+                <ul>
+                    <li><a href="movie_home.php">Home</a></li>
+                    <li><a href="web_series.html">Series</a></li>
+                    <li><a href="films.html">Films</a></li>
+                    <li><a href="new_popular.html">New & Popular</a></li>
+                    <li><a href="wishlist.html">My List</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="profile-header">
+                <img src="pictures/profilelogo.jpg" alt="Profile Picture">
+                <div>
+                    <h1>Abhijit Mukherjee</h1>
+                    <p class="username">@yoabhiitswatchtime</p>
+                    <button class="edit-button">Edit Profile</button>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-section activity-summary">
+                    <h2>Activity Summary</h2>
+                    <ul>
+                        <li>Watched: Godzilla x Kong: The New Empire</li>
+                        <li>Liked: Dune: Part Two</li>
+                        <li>Added to Wishlist: The Fall Guy</li>
+                        <!-- Add more activity items -->
+                    </ul>
+                </div>
+                <div class="profile-section preferences">
+                    <h2>Preferences</h2>
+                    <label for="language">Preferred Language</label>
+                    <select id="language">
+                        <option value="english">English</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="french">French</option>
+                        <!-- Add more language options -->
+                    </select>
+
+                    <label for="quality">Streaming Quality</label>
+                    <select id="quality">
+                        <option value="hd">HD</option>
+                        <option value="sd">SD</option>
+                        <option value="4k">4K</option>
+                    </select>
+                </div>
+                <div class="profile-section account-settings">
+                    <h2>Account Settings</h2>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" value="abhijitmukherjee416@example.com">
+                    
+                    <label for="username">Username</label>
+                    <input type="text" id="username" value="@yoabhiitswatchtime">
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" value="password123">
+                </div>
+                <div class="profile-section">
+                    <h2>Watchlist</h2>
+                    <ul>
+                        <li>Godzilla x Kong: The New Empire</li>
+                        <li>Dune: Part Two</li>
+                        <li>The Fall Guy</li>
+                        <!-- Add more watchlist items -->
+                    </ul>
+                </div>
+            </div>
+
+            <button class="save-button">Save Changes</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WatchTime. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* Basic Reset */
+body, h1, h2, p, ul, li, img, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 10px 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.movie-details {
+    display: flex;
+    padding: 20px 0;
+}
+
+.movie-poster img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.movie-info {
+    margin-left: 20px;
+}
+
+.movie-info h1 {
+    font-size: 36px;
+}
+
+.movie-info p {
+    margin: 10px 0;
+}
+
+.btn {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #f40612;
+}
+
+.related-movies {
+    padding: 20px 0;
+}
+
+.related-movies h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.movie-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.movie-card {
+    flex: 0 0 200px;
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-card p {
+    padding: 10px;
+    background: #444;
+}
+
+footer {
+    background: #111;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}

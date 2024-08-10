@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchTime - Popcorn Time</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        body, h1, p, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Merriweather', serif;
+            background: linear-gradient(to right, #2C3E50, #4CA1AF);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #F39C12;
+            animation: bounceIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #fff;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        a {
+            font-size: 18px;
+            color: #F39C12;
+            text-decoration: none;
+            border: 2px solid #F39C12;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #F39C12;
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Background Popcorn Animation */
+        .popcorn {
+            position: absolute;
+            bottom: -50px;
+            width: 100px;
+            height: 100px;
+            background: url('popcorn.png') no-repeat center center;
+            background-size: contain;
+            animation: floatUp 5s infinite ease-in-out;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-200px);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-400px);
+                opacity: 0;
+            }
+        }
+
+        .popcorn:nth-child(odd) {
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+
+        .popcorn:nth-child(even) {
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grab your popcorn</h1>
+        <p>It's WATCHTIME!</p>
+        <a href="movie_home.php">Go to Home Page</a>
+    </div>
+    
+    <div class="popcorn" style="left: 10%;"></div>
+    <div class="popcorn" style="left: 25%;"></div>
+    <div class="popcorn" style="left: 40%;"></div>
+    <div class="popcorn" style="left: 55%;"></div>
+    <div class="popcorn" style="left: 70%;"></div>
+    <div class="popcorn" style="left: 85%;"></div>
+</body>
+</html>

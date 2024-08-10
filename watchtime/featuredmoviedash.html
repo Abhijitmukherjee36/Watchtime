@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Description - The Boys</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #0685f4;
+        }
+
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .movie-detail {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .movie-poster {
+            flex: 0 0 300px;
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .movie-info {
+            max-width: 600px;
+        }
+
+        .movie-info h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .movie-info p {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background: #0685f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #f40612;
+        }
+
+        .download-section {
+            margin-top: 20px;
+        }
+
+        .download-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .download-links a {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            color: white;
+            text-decoration: none;
+            background: #333;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+
+        .download-links a:hover {
+            background: #444;
+        }
+
+        .trailer-section, .rating-section, .screenshots-section {
+            margin-top: 20px;
+        }
+
+        .trailer-section h2, .rating-section h2, .screenshots-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .trailer {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .trailer iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+        }
+
+        .rating-section .stars {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .stars span {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .stars span:hover,
+        .stars span:hover ~ span {
+            color: gold;
+        }
+
+        .screenshots-section {
+            padding: 20px 0;
+        }
+
+        .screenshots-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            border-radius: 50%;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .reviews-section {
+            margin-top: 20px;
+        }
+
+        .reviews-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .review {
+            border-bottom: 1px solid #333;
+            padding: 10px 0;
+        }
+
+        .review h3 {
+            font-size: 18px;
+        }
+
+        .review p {
+            margin: 5px 0;
+        }
+
+        .review span {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="#" class="logo">WatchTime</a>
+                <ul>
+                    <li><a href="movie_home.php">Home</a></li>
+                    <li><a href="web_series.html">Series</a></li>
+                    <li><a href="films.html">Films</a></li>
+                    <li><a href="new_popular.html">New & Popular</a></li>
+                    <li><a href="wishlist.html">My List</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="movie-detail">
+                <div class="movie-poster">
+                    <img src="pictures/theboys.jpg" alt="The Boys">
+                </div>
+                <div class="movie-info">
+                    <h1>The Boys</h1>
+                    <p>S5 E1 Department of Dirty Tricks</p>
+                    <p><strong>Duration:</strong> 2h 15m</p>
+                    <p>Rating: 8.9/10</p>
+                    <p>All the loyal citizens are called to attention; they must gather at the courthouse tomorrow to witness Homelander's verdict and prepare themselves.</p>
+                    <button class="btn">Watch Now</button>
+                </div>
+            </div>
+            
+            <div class="download-section">
+                <h2>Download Links</h2>
+                <div class="download-links">
+                    <a href="https://new2.gdflix.cfd/file/rlhjJVYHQz" download>The Boys (Season 4) [Hindi-English] 720p [560MB/E]</a>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <div class="download-links">
+
+                    <a href="https://new2.gdflix.cfd/file/QnIq9RMyH7" download>The Boys (Season 4) [Hindi-English] 1080p [1.4GB/E]</a>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <div class="download-links">
+                    <a href="https://new2.gdflix.cfd/file/ZSOHor3rra" download>The Boys (Season 4) [Hindi-English] 2160p (10bit) [8.5GB/E]</a>
+                </div>
+            </div>
+            
+            <div class="trailer-section">
+                <h2>Watch Trailer</h2>
+                <div class="trailer">
+                    <iframe src="https://www.youtube.com/embed/EzFXDvC-EwM?si=qdyuGW383Kpp_pk-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="rating-section">
+                <h2>Rate This Movie</h2>
+                <div class="stars" id="stars">
+                    <span data-rating="1">&#9733;</span>
+                    <span data-rating="2">&#9733;</span>
+                    <span data-rating="3">&#9733;</span>
+                    <span data-rating="4">&#9733;</span>
+                    <span data-rating="5">&#9733;</span>
+                </div>
+            </div>
+            
+            <div class="screenshots-section">
+                <h2>Screenshots</h2>
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="pictures/boysss1.png" alt="Screenshot 1">
+                        </div>
+                        <div class="slide">
+                            <img src="pictures/boysss2.avif" alt="Screenshot 2">
+                        </div>
+                        <div class="slide">
+                            <img src="pictures/boysss3.jpg" alt="Screenshot 3">
+                        </div>
+                        <div class="slide">
+                            <img src="pictures/boysss4.jpg" alt="Screenshot 4">
+                        </div>
+                    </div>
+                    <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="moveSlide(1)">&#10095;</a>
+                </div>
+            </div>
+
+            <div class="reviews-section">
+                <h2>Reviews</h2>
+                <div class="review">
+                    <h3>John Doe</h3>
+                    <p>Rating: <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span></p>
+                    <p>This season of The Boys is absolutely thrilling. The stakes are higher than ever!</p>
+                </div>
+                <div class="review">
+                    <h3>Jane Smith</h3>
+                    <p>Rating: <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+                    <p>Incredible episode! The character development and plot twists keep me hooked.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MovieStream. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+            if (slideIndex >= totalSlides) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = totalSlides - 1;
+            }
+            const slideWidth = slides[0].clientWidth;
+            const slidesContainer = document.querySelector('.slides');
+            slidesContainer.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+        }
+
+        function moveSlide(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        showSlides(); // Initial call to display slides
+    </script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New & Popular - WatchTime</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        body, h1, h2, p, ul, li, img, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #0685f4;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0685f4;
+        }
+
+        /* news */
+        main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .news-section {
+            margin-bottom: 40px;
+        }
+
+        .news-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0685f4;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .news-articles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .news-article {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .news-article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .news-article img {
+            width: 100%;
+            height: auto;
+        }
+
+        .news-article-content {
+            padding: 15px;
+        }
+
+        .news-article-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .news-article-content p {
+            font-size: 16px;
+            color: #bbb;
+        }
+
+        .read-more {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #0685f4;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: none;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .news-article:hover .read-more {
+            display: block;
+        }
+
+        .read-more:hover {
+            background-color: #fff;
+            color: #0685f4;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="#" class="logo">WatchTime</a>
+                <ul>
+                    <li><a href="movie_home.html">Home</a></li>
+                    <li><a href="web_series.html">Series</a></li>
+                    <li><a href="films.html">Films</a></li>
+                    <li><a href="new_popular.html">New & Popular</a></li>
+                    <li><a href="wishlist.html">My List</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="news-section">
+                <h2>Latest News</h2>
+                <div class="news-articles">
+                    <article class="news-article">
+                        <img src="newspicture/news1.webp" alt="News 1">
+                        <div class="news-article-content">
+                            <h3>Comic-Con: ‘Alien: Romulus’ Face-Hugs Hall H With Chest-Bursting Footage, Giveaways</h3>
+                            <p>When you don’t have star power or a massive superhero movie to show off in San Diego Comic-Con’s highly-visible Hall H, you have to get creative. And Disney and its 20th Century Studios division did just that for its Alien: Romulus panel. A little theatrics — red strobe lights followed by a gurgling man stumbling</p>
+                            <a href="https://www.hollywoodreporter.com/movies/movie-news/comic-con-alien-romulus-footage-fede-alvarez-1235959695/" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="news-article">
+                        <img src="newspicture/news2.webp" alt="News 2">
+                        <div class="news-article-content">
+                            <h3>Deadpool Creator Rob Liefeld Is At Peace with That ‘Deadpool & Wolverine’ Joke</h3>
+                            <p>A few years ago, Deadpool creator Rob Liefeld ran into Marvel Studios boss Kevin Feige at San Diego Comic-Con, where he got a tantalizing tidbit about the then-mysterious Deadpool 3. Feige told Liefeld that his desk was currently covered with the writer-artist’s work, specifically the Deadpool Corps – a team of wacky alternate reality versions</p>
+                            <a href="https://www.hollywoodreporter.com/movies/movie-news/deadpool-creator-rob-liefeld-dogpool-1235959661/" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="news-article">
+                        <img src="newspicture/news3.webp" alt="News 3">
+                        <div class="news-article-content">
+                            <h3>Box Office: ‘Deadpool & Wolverine’ Reaps Record $38.5M in Previews, Best Ever for an R-Rated Film, and More</h3>
+                            <p>Merc with the Mouth is looking better than ever, along with old pal and fellow superhero favorite Wolverine. Marvel Studios and Disney’s Deadpool & Wolverine grossed a record-shattering $38.5 million in Thursday previews, by far the best showing ever for an R-rated film and putting it at No. 8 on the list of top previews</p>
+                            <a href="https://www.hollywoodreporter.com/movies/movie-news/deadpool-wolverine-box-office-record-r-rated-previews-1235958901/" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="news-section">
+                <h2>Movie Features</h2>
+                <div class="news-articles">
+                    <article class="news-article">
+                        <img src="newspicture/news4.webp" alt="Upcoming 1">
+                        <div class="news-article-content">
+                            <h3>All the X-Men Franchise Movies, Ranked</h3>
+                            <p>For 20 years, 20th Century Fox’s X-Men films and associated spinoffs built up a world that could stand separately from the MCU and DCEU. While the results were not always what audiences, filmmakers or even the actors desired, there was a certain underdog quality to the X-franchise. Just when it seemed like Wolverine had popped</p>
+                            <a href="https://www.hollywoodreporter.com/lists/best-x-men-movies/" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="news-article">
+                        <img src="newspicture/news5.webp" alt="Upcoming 2">
+                        <div class="news-article-content">
+                            <h3>‘Deadpool & Wolverine’ Director Shawn Levy: Hollywood’s PG Guy Finds His Edge</h3>
+                            <p>Shawn Levy has long chafed at the labels Hollywood has placed upon him. That helps explain the evolution of the Montreal-born filmmaker from go-to family comedy guy (Night at the Museum and Cheaper by the Dozen) to the producer of cerebral Oscar winners (Arrival) and cultural behemoths (Stranger Things). After a string of successes in</p>
+                            <a href="https://www.hollywoodreporter.com/movies/movie-features/deadpool-wolverine-shawn-levy-ryan-reynolds-1235953053/" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="news-article">
+                        <img src="newspicture/news6.webp" alt="Upcoming 3">
+                        <div class="news-article-content">
+                            <h3>‘Twisters’ Star Brandon Perea on the Daunting Task of Following Philip Seymour Hoffman and Why ‘The OA’ Isn’t Over to Him Yet</h3>
+                            <p>Two years ago, Brandon Perea delivered a breakout big-screen performance in Jordan Peele’s Nope, and now he’s back in Universal’s latest July event film, Twisters. Directed by Lee Isaac Chung, Perea plays Boone, who’s nearly unrecognizable from his Nope character, Angel Torres. He is the right hand to Glen Powell’s Tyler Owens, as their team"</p>
+                            <a href="https://www.hollywoodreporter.com/movies/movie-features/twisters-brandon-perea-philip-seymour-hoffman-1235952704/.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="news-section">
+                <h2>Awards Articles</h2>
+                <div class="news-articles">
+                    <article class="news-article">
+                        <img src="newspicture/news7.webp" alt="Feature 1">
+                        <div class="news-article-content">
+                            <h3>2024 News & Documentary Emmy Awards Nominations Revealed</h3>
+                            <p>The 2024 News & Documentary Emmy Awards nominations have been announced. The awards, presented by the National Academy of Television Arts & Sciences, will be handed out across two nights, one recognizing winners in news categories and another recognizing documentaries, in September. The nominees for outstanding live news program are the CBS Evening News with</p>
+                            <a href="https://www.hollywoodreporter.com/tv/tv-news/2024-news-documentary-emmy-awards-nominations-nominees-list-1235958210/" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="news-article">
+                        <img src="newspicture/news8.webp" alt="Feature 2">
+                        <div class="news-article-content">
+                            <h3>Emmy Nominations 2024: Historic, Record-Breaking and Otherwise Notable Nominees</h3>
+                            <p>The 2024 Emmy nominations made waves this week, with The Bear breaking records alongside Carol Burnett, Nava Mau, Steve Martin and more. This year, FX’s The Bear broke the record for the most nominations for a comedy series, earning 23 nods for the show’s second season. The milestone comes after the series set the record</p>
+                            <a href="https://www.hollywoodreporter.com/tv/tv-news/2024-emmys-records-fun-facts-1235950703/" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="news-article">
+                        <img src="newspicture/news9.webp" alt="Feature 3">
+                        <div class="news-article-content">
+                            <h3>Grammys CEO Reminds Members to Vote With Purpose: “Just Listen to the Music and Evaluate It”</h3>
+                            <p>Grammys CEO Harvey Mason jr. is making one thing clear to Recording Academy voters: “There is no place in our organization for such bias, grudge-holding, or careless voting.” The songwriter-producer and executive sent a letter to Academy voters on Friday, reminding them to cast their votes for the 2025 show with a purpose. “Last GRAMMY</p>
+                            <a href="https://www.hollywoodreporter.com/news/music-news/grammys-ceo-letter-members-vote-1235959091/" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WatchTime. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
